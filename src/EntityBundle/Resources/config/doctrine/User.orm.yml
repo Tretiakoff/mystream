@@ -8,4 +8,13 @@ EntityBundle\Entity\User:
             id: true
             generator:
                 strategy: AUTO
+    fields:
+        facebook_id:
+            type: string
+            lenght: 255
+            nullable: true
+        facebook_access_token:
+            type: string
+            lenght: 255
+            nullable: true
     lifecycleCallbacks: {  }

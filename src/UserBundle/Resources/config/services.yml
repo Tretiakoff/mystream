@@ -1,6 +1,13 @@
+parameters:
+    my_user_provider.class: UserBundle\Security\Core\User\FOSUBUserProvider
+
 services:
     app.form.registration:
             class: UserBundle\Form\RegistrationType
             tags:
                 - { name: form.type, alias: app_user_registration }
 
+    my_user_provider:
+            class: "%my_user_provider.class%"
+            #this is the place where the properties are passed to the UserProvider - see config.yml
+            arguments: [@fos_user.user_manager,{facebook: facebook_id}]
