@@ -24,6 +24,10 @@ class User extends BaseUser
         return $this->id;
     }
 
+    public function setEmail($email){
+        parent::setEmail($email);
+        $this->setUsername($email);
+    }
     /**
      * Tells if the the given user is this user.
      *
@@ -35,6 +39,6 @@ class User extends BaseUser
      */
     public function isUser(UserInterface $user = null)
     {
-        // TODO: Implement isUser() method.
+        
     }
 }
