@@ -21,7 +21,9 @@
                 <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
                 <label for="remember_me" id="remember_me-label">{{ 'security.login.remember_me'|trans }}</label><br>
                 <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"/>
-                <a href="">Se connecter via Facebook</a>
+                {% for owner in hwi_oauth_resource_owners() %}
+                    <a href="{{ hwi_oauth_login_url(owner) }}">{{ owner | trans({}, 'HWIOAuthBundle') }}</a>
+                {% endfor %}
             </div>
         </form>
     </div>

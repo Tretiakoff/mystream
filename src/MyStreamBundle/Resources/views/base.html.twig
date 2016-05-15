@@ -12,8 +12,8 @@
         <ul>
             <li><a href="/">Accueil</a></li>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <li><a href="#">Envoyer une vidéo</a></li>
-                <li>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <li><a href="#">Ajouter une vidéo</a></li>
+                <li>
                     <a href="{{ path('fos_user_security_logout') }}">
                         {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                     </a></li>
@@ -28,11 +28,6 @@
         </ul>
     </nav>
 </header>
-
-{% for owner in hwi_oauth_resource_owners() %}
-    <a href="{{ hwi_oauth_login_url(owner) }}">{{ owner | trans({}, 'HWIOAuthBundle') }}</a> <br />
-{% endfor %}
-
 {% block javascript %}{% endblock %}
 </body>
 </html>
