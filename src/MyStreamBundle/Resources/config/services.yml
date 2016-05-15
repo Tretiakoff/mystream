@@ -1,0 +1,4 @@
+services:
+#    my_stream.example:
+#        class: MyStreamBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
