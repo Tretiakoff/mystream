@@ -1,0 +1,11 @@
+EntityBundle\Entity\Video:
+    properties:
+        video:
+            - File:
+                maxSize: 5000m
+                mimeTypes: [video/webm, video/mp4, video/ogg]
+                mimeTypesMessage: Please upload a valid format
+        title:
+             - NotBlank: ~
+        description:
+              - NotBlank: ~
