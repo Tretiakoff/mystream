@@ -12,7 +12,7 @@
         <ul>
             <li><a href="/">Accueil</a></li>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <li><a href="#">Ajouter une vidéo</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
                 <li>
                     <a href="{{ path('fos_user_security_logout') }}">
                         {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -28,6 +28,11 @@
         </ul>
     </nav>
 </header>
+
+<main role="main">
+    {% block body %}
+    {% endblock %}
+</main>
 {% block javascript %}{% endblock %}
 </body>
 </html>

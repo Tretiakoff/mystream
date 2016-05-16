@@ -62,6 +62,7 @@ class FOSUBUserProvider extends BaseClass
             $user->setEnabled(true);
             $this->userManager->updateUser($user);
             return $user;
+
         }
 
         //if user exists - go with the HWIOAuth way

@@ -1,0 +1,4 @@
+EntityBundle\Entity\Video:
+    video:
+        mapping:           video
+        filename_property: video_name

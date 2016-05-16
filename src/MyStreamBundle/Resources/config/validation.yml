@@ -1,0 +1,7 @@
+EntityBundle\Entity\video:
+    properties:
+        video:
+            - File:
+                maxSize: 5000m
+                mimeTypes: [application/avi, application/mp4, applicatin/mkv, application/mov, application/wmw]
+                mimeTypesMessage: Please upload a valid format

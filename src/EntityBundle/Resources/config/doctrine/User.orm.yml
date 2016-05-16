@@ -2,6 +2,7 @@ EntityBundle\Entity\User:
     type: entity
     table: fos_user
     repositoryClass: EntityBundle\Repository\UserRepository
+    exclusion_policy: ALL
     id:
         id:
             type: integer
@@ -16,5 +17,12 @@ EntityBundle\Entity\User:
         facebook_access_token:
             type: string
             lenght: 255
+            nullable: true
+        videoName:
+            type: string
+            lenght: 255
+            nullable: true
+        updateAt:
+            type: date
             nullable: true
     lifecycleCallbacks: {  }

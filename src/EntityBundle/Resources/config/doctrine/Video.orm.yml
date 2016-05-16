@@ -1,0 +1,38 @@
+EntityBundle\Entity\Video:
+
+    type: entity
+    table: null
+    repositoryClass: EntityBundle\Repository\VideoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        videoName:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        updateAt:
+            type: datetime
+            column: upload_date
+            nullable: true
+        authorId:
+            type: integer
+            column: author_id
+
+    manyToOne:
+          user:
+              targetEntity: EntityBundle\Entity\User
+              inversedBy: user
+              cascade: ["persist"]
+              joinColumn:
+                  name: author_id
+                  referencedColumnName: id
+    lifecycleCallbacks: {  }

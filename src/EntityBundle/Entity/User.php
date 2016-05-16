@@ -3,7 +3,8 @@ namespace EntityBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\UserInterface;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * User
@@ -101,5 +102,76 @@ class User extends BaseUser
     public function getFacebookAccessToken()
     {
         return $this->facebook_access_token;
+    }
+    /**
+     * @var string
+     */
+    private $facebook_name;
+
+
+    /**
+     * Set facebookName
+     *
+     * @param string $facebookName
+     *
+     * @return User
+     */
+    /**
+     * @var string
+     */
+    private $videoName;
+
+    /**
+     * @var \DateTime
+     */
+    private $updateAt;
+
+
+    /**
+     * Set videoName
+     *
+     * @param string $videoName
+     *
+     * @return User
+     */
+    public function setVideoName($videoName)
+    {
+        $this->videoName = $videoName;
+
+        return $this;
+    }
+
+    /**
+     * Get videoName
+     *
+     * @return string
+     */
+    public function getVideoName()
+    {
+        return $this->videoName;
+    }
+
+    /**
+     * Set updateAt
+     *
+     * @param \DateTime $updateAt
+     *
+     * @return User
+     */
+    public function setUpdateAt($updateAt)
+    {
+        $this->updateAt = $updateAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updateAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdateAt()
+    {
+        return $this->updateAt;
     }
 }
