@@ -6,7 +6,30 @@
     <body>
     <h3>Dashboard</h3>
     <hr>
-    <a href="/dashboard/upload">Upload by input</a>
-    <a href="/dashboard/upload_url">Upload by Url</a>
+    <ul>
+        <li>
+            <a href="/dashboard/upload">Ajouter une vidéo par input</a>
+        </li>
+        <li>
+            <a href="/dashboard/upload_url">Ajouter une vidéo par url</a>
+        </li>
+    </ul>
+    <h3>Mes Vidéos</h3>
+    <hr>
+    <table>
+        {% for video in video %}
+            <h1>{{ video.title }}</h1>
+            <div>
+                {{ video.description }}
+            </div> <br>
+            {% set img = 'images/'~ video.imageName %}
+            {% set urlWatch = '/watch/'~ video.id %}
+            <a href="{{ urlWatch }}">
+                <img src="{{ img| imagine_filter('my_thumb') }}"/>
+            </a>
+            <a href="/dashboard/{{ video.id }}/edit">Modifier</a>
+            <a href="/dashboard/{{ video.id }}/remove">Supprimer</a>
+        {% endfor %}
+    </table>
     <body>
     {% endblock %}

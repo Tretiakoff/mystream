@@ -14,6 +14,14 @@ my_stream_dashboard_upload_url:
     path:   /dashboard/upload_url
     defaults: { _controller: MyStreamBundle:Dashboard:uploadUrl }
 
+my_stream_dashboard_edit:
+    path:   /dashboard/{id}/edit
+    defaults: { _controller: MyStreamBundle:Dashboard:edit }
+
+my_stream_dashboard_remove:
+    path:   /dashboard/{id}/remove
+    defaults: { _controller: MyStreamBundle:Dashboard:remove }
+
 my_stream_channel:
     path:     /channel/{username}
     defaults: { _controller: MyStreamBundle:Channel:index }

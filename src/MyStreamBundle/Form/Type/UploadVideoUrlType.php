@@ -24,7 +24,7 @@ class UploadVideoUrlType extends AbstractType
                 'required' => true,
                 'allow_delete' => true, // not mandatory, default is true
                 'download_link' => true, // not mandatory, default is true
-                'label' => 'Thumbnail'
+                'label' => 'Vignette'
             ))
             ->add('save', SubmitType::class, array('label' => 'Upload'));
     }
