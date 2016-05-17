@@ -29,11 +29,11 @@ class UploadVideoUrlType extends AbstractType
             ->add('save', SubmitType::class, array('label' => 'Upload'));
     }
 
-     public function configureOptions(OptionsResolver $resolver)
-     {
-         $resolver->setDefaults(array(
-             'data_class' => 'EntityBundle\Entity\Video',
-         ));
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'EntityBundle\Entity\Video',
+        ));
 
-
+    }
 }

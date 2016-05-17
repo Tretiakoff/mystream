@@ -10,12 +10,24 @@
         <div>
 {% endblock %}
 {% block javascript %}
-        <script type="text/javascript">
+
+{% if video.videoName[0:4] == 'http' %}
+        <script>
+            var playerInstance = jwplayer("myElement");
             jwplayer("{{ video.id }}").setup({
-                base: '/videos/{{ video.videoName }}',
-                file: '/videos/{{ video.videoName }}',
-                "height": 360,
-                "width": 640,
+            file: "{{ video.videoName[6:37] }} " ,
+            width: 640,
+            height: 360
             });
+     </script>
+{% else %}
+        <script>
+            jwplayer("{{ video.id }}").setup({
+             base: '/videos/{{ video.videoName }}',
+             file: '/videos/{{ video.videoName }}',
+             "height": 360,
+             "width": 640,
+              });
         </script>
+{% endif %}
 {% endblock %}
