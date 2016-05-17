@@ -1,11 +1,21 @@
 {% extends 'MyStreamBundle::base.html.twig' %}
 
-{% block title %}Mes vidéos{% endblock %}
+{% block title %}Chaîne de {{ user.username }}{% endblock %}
 
 {% block body %}
-    <body>
-    <h3>MES VIDEOS</h3>
-
- qss   {{ user.username }}
-    <body>
+    <h3>Vidéos de {{ user.username }}</h3>
+    <hr>
+    <table>
+        {% for video in video %}
+        <h1>{{ video.title }}</h1>
+        <div>
+            {{ video.description }}
+        </div> <br>
+        {% set img = 'images/'~ video.imageName %}
+        {% set urlWatch = '/watch/'~ video.id %}
+        <a href="{{ urlWatch }}">
+            <img src="{{ img| imagine_filter('my_thumb') }}"/>
+            </a>
+        {% endfor %}
+    </table>
 {% endblock %}

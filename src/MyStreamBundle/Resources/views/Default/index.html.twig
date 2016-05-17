@@ -7,29 +7,21 @@
 
     {% for video in url %}
         <h1>{{ video.title }}</h1>
-        <div id="{{ video.id }}">
-            loading....
-        </div><br>
         <div>
             {{ video.description }}
         </div> <br>
-        <i>Posted By {{ video.user.username }}</i> <br><br>
-        {% set img = 'images/'~ video.imageName   %}
-        <img src="{{ img| imagine_filter('my_thumb') }}" />
+        {% set img = 'images/'~ video.imageName %}
+        {% set urlWatch = '/watch/'~ video.id %}
+        {% set urlChannel = '/channel/'~ video.user.username %}
+        <a href="{{ urlWatch }}">
+            <img src="{{ img| imagine_filter('my_thumb') }}"/>
+        </a><br><br>
+
+        <i>Posted By
+            <a href="{{ urlChannel }}">
+            {{ video.user.username }}</i>
+        </a>
+
     {% endfor %}
 
-
-{% endblock %}
-
-{% block javascript %}
-    {% for video in url %}
-        <script type="text/javascript">
-            jwplayer("{{ video.id }}").setup({
-                base: '/videos/{{ video.videoName }}',
-                file: '/videos/{{ video.videoName }}',
-                "height": 360,
-                "width": 640,
-            });
-        </script>
-    {% endfor %}
 {% endblock %}

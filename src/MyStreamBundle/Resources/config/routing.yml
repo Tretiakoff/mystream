@@ -10,6 +10,14 @@ my_stream_dashboard_upload:
     path:   /dashboard/upload
     defaults: { _controller: MyStreamBundle:Dashboard:upload }
 
+my_stream_dashboard_upload_url:
+    path:   /dashboard/upload_url
+    defaults: { _controller: MyStreamBundle:Dashboard:uploadUrl }
+
 my_stream_channel:
     path:     /channel/{username}
     defaults: { _controller: MyStreamBundle:Channel:index }
+
+my_stream_watch:
+    path:     /watch/{videoId}
+    defaults: { _controller: MyStreamBundle:Watch:index }

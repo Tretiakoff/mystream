@@ -1,0 +1,21 @@
+{% extends 'MyStreamBundle::base.html.twig' %}
+
+{% block title %}{{ video.title }}{% endblock %}
+
+{% block body %}
+            <h1>{{ video.title }}</h1>
+        <div id="{{ video.id }}">
+            loading....
+        </div><br>
+        <div>
+{% endblock %}
+{% block javascript %}
+        <script type="text/javascript">
+            jwplayer("{{ video.id }}").setup({
+                base: '/videos/{{ video.videoName }}',
+                file: '/videos/{{ video.videoName }}',
+                "height": 360,
+                "width": 640,
+            });
+        </script>
+{% endblock %}
