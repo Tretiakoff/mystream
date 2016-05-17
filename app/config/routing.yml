@@ -24,3 +24,6 @@ hwi_oauth_redirect:
 facebook_login:
     pattern: /login/check-facebook
 
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+

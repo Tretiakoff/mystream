@@ -13,6 +13,9 @@ EntityBundle\Entity\Video:
         videoName:
             type: string
             length: 255
+        imageName:
+            type: string
+            lenght: 255
         title:
             type: string
             length: 255
@@ -20,8 +23,7 @@ EntityBundle\Entity\Video:
             type: string
             length: 255
         updateAt:
-            type: datetime
-            column: upload_date
+            type: date
             nullable: true
         authorId:
             type: integer

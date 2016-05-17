@@ -20,7 +20,13 @@ class UploadVideoType extends AbstractType
                 'required' => true,
                 'allow_delete' => true, // not mandatory, default is true
                 'download_link' => true, // not mandatory, default is true
-                'label' => 'Upload'
+                'label' => 'Video'
+            ))
+            ->add('image', 'vich_image', array(
+                'required' => true,
+                'allow_delete' => true, // not mandatory, default is true
+                'download_link' => true, // not mandatory, default is true
+                'label' => 'Thumbnail'
             ))
             ->add('save', SubmitType::class, array('label' => 'Upload'));
     }

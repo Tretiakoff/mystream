@@ -108,6 +108,23 @@ vich_uploader:
         video:
             uri_prefix: /videos/
             upload_destination: %kernel.root_dir%/../web/videos
+            namer: vich_uploader.namer_uniqid
+        image:
+            uri_prefix: /images/
+            upload_destination: %kernel.root_dir%/../web/images
+
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+        my_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [120, 90], mode: outbound }
+
 
 
 
