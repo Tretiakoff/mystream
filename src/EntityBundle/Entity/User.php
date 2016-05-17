@@ -31,20 +31,7 @@ class User extends BaseUser
         parent::setEmail($email);
         $this->setUsername($email);
     }
-
-    /**
-     * Tells if the the given user is this user.
-     *
-     * Useful when not hydrating all fields.
-     *
-     * @param null|UserInterface $user
-     *
-     * @return boolean
-     */
-    public function isUser(UserInterface $user = null)
-    {
-
-    }
+    
     /**
      * @var string
      */

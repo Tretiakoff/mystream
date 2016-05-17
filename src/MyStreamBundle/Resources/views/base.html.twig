@@ -31,8 +31,12 @@
 
 <main role="main">
     {% block body %}
+
     {% endblock %}
 </main>
+
+<script src="{{ asset('assets/js/jwplayer.js') }}"></script>
+<script>jwplayer.key="ZVmDbvqzgd8gPJ4K+yQPDo5fQj05RkAHIFX4UA==";</script>
 {% block javascript %}{% endblock %}
 </body>
 </html>

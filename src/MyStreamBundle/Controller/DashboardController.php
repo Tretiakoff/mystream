@@ -41,6 +41,7 @@ class DashboardController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $video->setUser($this->getUser());
+            $video->setUpdatedAt(new \DateTime(date('Y-m-d H:i:s')));
             $em = $this->getDoctrine()->getManager();
             $em->persist($video);
             $em->flush();

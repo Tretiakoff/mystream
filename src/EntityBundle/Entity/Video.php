@@ -217,18 +217,19 @@ class Video
 
 
     /**
-     * Set updateAt
+     * Set updatedAt
      *
-     * @param \DateTime $updateAt
+     * @param \DateTime $updatedAt
      *
      * @return Video
      */
-    public function setUpdateAt($updateAt)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->updateAt = $updateAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
+
 
     /**
      * Get updateAt
